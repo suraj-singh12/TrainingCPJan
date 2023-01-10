@@ -1,0 +1,14 @@
+## 10 Jan 2023
+
+TA Session: 
+Time Complexity questions
+
+## Solve InterviewBit questions (all) anyhow!
+apart from striver, leetcode and codechef
+
+# Strings
+Stock sell and buy problem
+panagram
+linear search
+binary search
+
