@@ -1,0 +1,3 @@
+# Dutch National Flag algo
+sort 3 numbers in the given array (sort three colors 0, 1, 2)
+
