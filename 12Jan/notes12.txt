@@ -1,0 +1,71 @@
+
+leetcode: multiply strings (using school multiplication method)
+
+class Solution {
+public:
+    string addS(string ans, string tmpRes) {
+        string addAns = "";
+        int carry = 0;
+        while(!ans.empty() || !tmpRes.empty() || carry > 0) {
+            int d1 = 0, d2 = 0;
+            if(!ans.empty()) {
+                d1 = ans.back() - '0';
+                ans.pop_back();
+            }
+            if(!tmpRes.empty()) {
+                d2 = tmpRes.back() - '0';
+                tmpRes.pop_back();
+            }
+            int sum = d1 + d2 + carry;
+            addAns.push_back((sum % 10) + '0');
+            carry = sum / 10;
+        }
+        reverse(addAns.begin(), addAns.end());
+        return addAns;
+    }
+    string multiply(string num1, string num2) {
+        if(num1 == "0" || num2 == "0") return "0";
+        if(num1.size() < num2.size()) return multiply(num2, num1);  
+
+        int iteration = 0;
+        string ans = "";
+        // school multiplication method
+        while(!num2.empty()) {
+            int d = num2.back() - '0';  // took out last digit
+            num2.pop_back();
+
+            string tmpRes = "";
+            int carry = 0;
+            for(int i = num1.size() -1; i >= 0; --i) {
+                int d2 = num1[i] - '0';
+                int mul = d * d2;
+                mul += carry;
+                tmpRes.push_back((mul%10) + '0');
+                carry = mul / 10;
+            }
+            if(carry > 0) tmpRes.push_back(carry + '0');
+            reverse(tmpRes.begin(), tmpRes.end());      // reversing here : O(n)
+            // i am not using += operator, as it is O(n) operation, so in for loop complexity will go high
+            // so instead, making the string by using O(1) push_back, and then reversing in one go O(n)
+            for(int i = 0; i < iteration; ++i) {
+                tmpRes.push_back('0');
+            }
+            cout << tmpRes << " ";
+            if(iteration == 0) ans = tmpRes;
+            else ans = addS(ans, tmpRes);
+            cout << ans << endl;
+            iteration++;
+        }
+        return ans;
+    }
+};
+---------------------------------------------------------------------------------------------------------
+
+
+prefix sum and binary search
+
+maximize the confusion: https://leetcode.com/problems/maximize-the-confusion-of-an-exam/
+using BSearch
+
+
+using BS: https://codeforces.com/contest/1201/problem/c
