@@ -69,3 +69,25 @@ using BSearch
 
 
 using BS: https://codeforces.com/contest/1201/problem/c
+
+[a4] 
+a4 : minimum median
+a4 + k : max median
+a4 + k + 1: median that's not possible
+
+
+[a1, a2, a3, a4, a5]
+minimum media: a3
+max median: ?
+median that's not possible: a5 + k + 1
+
+
+1 1 1 1 4
+
+from n/2th element
+
+
+2
+0 1 
+1 2
+0.3333

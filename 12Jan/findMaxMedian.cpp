@@ -4,10 +4,10 @@ using namespace std;
 #define ll            long long
 
 bool good(ll med, ll a[], ll n, ll k) {
-    int cur =  0;
+    ll cur =  0;
     // find the total no of operations required to be done
     // to make the median as med
-    for(int i = n/2; i < n; ++i) {
+    for(ll i = n/2; i < n; ++i) {
         if(a[i] < med) cur += med - a[i];
     }
     // if no of ops <= k then yes, it is possible else not

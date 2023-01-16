@@ -1,0 +1,30 @@
+1 question in TA session
+RedZone question on interviewBit
+
+Median of Two Sorted Arrays
+https://codeforces.com/edu/course/2
+ITMO Academy 
+finish this, and you can reach 1900
+
+
+# Sorting 
+Fast: O(nlogn)  eg. merge/ heap
+Slow: O(n^2)    eg. insertion/ bubble sort etc
+
+
+space : const eg. (bubble)
+        space taking : eg. mergesort
+
+Stability of sorting algorithm:
+if you have two elements, and if both have same value, then their relative order should be preserved.
+This is the stability of sorting algorithm.
+If order is not preserved, the algorithm is unstable.
+
+Eg. Bubble sort is a stable algorithm
+sorting will be asked (write the code for this algorithm)
+
+Total no of swaps while doing sorting ?
+maintain a counter
+
+selection sort
+no of passes in sorting (in all algos)
