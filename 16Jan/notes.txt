@@ -28,3 +28,91 @@ maintain a counter
 
 selection sort
 no of passes in sorting (in all algos)
+
+
+------------------
+
+# Bubble Sort:
+for i = 0 -> n -1:
+    for j = 0 -> n - i - 1:
+        if(a[j + 1] < a[j]) 
+            swap(a[j], a[j+1])
+
+# Insertion sort:
+for i = 1 -> n:
+    j = i -1
+    key = a[i]
+    while(j >= 0 && a[j] > key)
+        a[j + 1] = a[j]
+        j--;
+    a[j +1] = key
+
+
+# Selection sort: 
+for i = 0 -> (n -1):
+    i_min = i;
+    for j = i+1 -> (n-1):
+        if(a[j] < a[i_min]) i_min = j;
+    swap(a[i], a[i_min])
+
+------------------------------------------
+# Sort an array of 0s, 1s, and 2s
+
+Dutch National Flag algorithm (V. Important)
+(3rd time repeated in training in 4 days)
+
+Approaches: 
+1. sort  O(nlogn)
+2. count no of 0s, 1s, 2s and fill in array again
+    O(n) multiple passes
+
+3. use Dutch national flag algo [DNF]
+    O(n) single pass
+
+int low = 0, mid = 0, high = n -1
+while mid <= high:      (focus here mid "<=" high)
+    if(arr[mid] == 0) {
+        swap(arr[low], arr[mid]);
+        low++;
+        mid++;
+    } else if(arr[mid] == 1) {
+        mid++;
+    } else {
+        swap(arr[mid], arr[high]);
+        high--;
+    }
+
+// after the array gets sorted 0s, 1s and 2s are in these ranges:
+// 0 -> low - 1 : 0s
+// low -> mid -1: 1s
+// high +1 -> n : 2s
+
+done!!
+
+---------------------------------------------------
+
+# Comparator function in sorting: 
+sort(a, a + n, compare);
+
+// for sort in descending order
+bool compare(int a, int b) {     // a is 1 lesser in index than b (think in this way)
+    return a > b;      
+    // if [a > b] is [true], then don't change the order, so [no swap]
+    // if [a > b] is [false], then order needs to be changed, so [swap]!
+}
+
+TakeAway: 
+// for true, no swaps!
+// for false, swap!
+
+
+sort a vector of pairs by second element, if same by first element then
+
+bool compare(pair<int, int> a, pair<int, int> b) {
+    if(a.second == b.second) {
+        return a.first < b.first;   // if true, no swap
+                            // if false, then they'll be swapped
+    }
+    return (a.second < b.second);   // if true, there's no swap
+                    // if false, then swap will be made
+}
