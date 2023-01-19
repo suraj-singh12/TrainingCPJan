@@ -12,3 +12,90 @@ fractional knapsack problem
 
 codeforces question: boxers
 https://codeforces.com/contest/1203/problem/E
+
+
+Vectors: 
+iterator functions in vectors -
+
+upper_bound : points to the element just after the last occurrence of given element
+lower_bound : points to the first element which is not less than the given element 
+# Equal range function
+equal_range : 
+    itr1 : points to the first occurrence of the given element, and 
+    itr2 : point to the element after the last occurrence of the given element
+
+
+vector<int>::iterator it;
+for(it = v.begin(); it != v.end(); ++it) cout << *it;
+
+v.erase(element)    removes this element from vector
+v.clear()           erase everything
+v.first()           returns whatever is the first value in vector
+v.back()            returns the last value in vector
+
+
+
+reverse(v.begin(), v.end());
+sort(v.begin(), v.end());
+lower_bound(v.begin(), v.end(), element);   // will give the iterator to lower bound
+lower_bound(v.begin(), v.end(), element) - v.begin();   // will give the element of lower_bound
+max_element(v.begin(), v.end());
+
+
+[1, 2, 3, 4, 4, 5, 9, 11]
+
+lower_bound(12) -> v.end()
+upper_bound(12) -> v.end()
+
+lower_bound(4) -> 4 (at ind3)
+upper_bound(4) -> 5 (at ind5)
+
+lower_bound(0) -> 1 (at ind 0)
+upper_bound(0) -> 1 (at ind 0)
+
+
+if(lower_bound(x) == v.end()) 
+{
+    //element does not exists
+} 
+else {
+    element exists
+}
+
+same for upper_bound()
+
+-------------------------------------------------------------
+
+Queue: 
+what is queue? (FIFO ds)
+Linear data structure
+what is linear ds?
+    arrangement of data is in linear manner, i.e. elements are placed adjacent to each other.
+    can move in one direction only
+    possible to traverse in single pass only
+    
+
+
+why is it important? BFS
+
+how trees in a jungle catch fire?
+
+       o         o
+          o               o
+o            o       o
+        o       o           o
+    o               o
+
+in bfs manner (try igniting the central node)
+
+
+Insertion: 
+    at the back : enqueue() operation using queue.push()
+    O(1)
+
+Deletion: 
+    the front element : dequeue() operation using queue.pop()
+    O(1)
+
+Searching: 
+    can just get the front element in O(1) using queue.front()
