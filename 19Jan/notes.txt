@@ -99,3 +99,27 @@ Deletion:
 
 Searching: 
     can just get the front element in O(1) using queue.front()
+
+
+
+    Ques: 
+    given a stream of character (inifinte supply of characters) 
+        -> at each moment tell the first non repeating character
+
+    stream:  a b a c c b ....
+    ans:     a a b b b -1 ...
+
+https://practice.geeksforgeeks.org/problems/first-non-repeating-character-in-a-stream1216/1
+
+Approach:
+1. maintain a queue, and a [26] size int array filled with 0s
+2. as soon a character is scanned insert in queue if it's not same as first char of queue
+increment the array[inputChar-'a'] everytime 
+3. while(array[topOfQueue] > 1) { do array[toOfQueue]--; pop();}
+4. if qeueu is empty, print -1 else print queue.top()
+
+repeat the process for next input char
+
+Another question: 
+https://leetcode.com/problems/rotting-oranges/description/
+similar to how fire catches in forest!
