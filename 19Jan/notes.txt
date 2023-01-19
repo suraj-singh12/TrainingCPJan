@@ -1,0 +1,14 @@
+In TA session: 
+
+parenthesis balancing problem
+finding cycle in a graph
+Moore Majority voting algo
+0-1 knapsack problem dp-10
+fractional knapsack problem 
+
+
+
+3-5 PM session:
+
+codeforces question: boxers
+https://codeforces.com/contest/1203/problem/E
