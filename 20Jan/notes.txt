@@ -1,0 +1,75 @@
+Recursion: 
+solving harder problems by breaking them into smaller problems.
+base case: solution to the smallest sub-problem that cannot be divided further.
+
+https://leetcode.com/problems/reverse-string/description/
+https://leetcode.com/problems/power-of-two/description/
+https://leetcode.com/problems/power-of-three/
+
+
+Modulo arithmetic: 
+
+(a + b) % m = (a % m + b % m) %m;
+
+a = mx + r1
+b = my + r2
+
+a + b = m (x + y) + r1 + r2
+(a + b) % m = (r1 + r2) % m;
+
+12 % 3 = 0
+
+7%3 + 5%3 = 1 + 2 = 3 !!!!
+
+(7%3 + 5%3) %3 = (1 + 2) %3 = 0  perfect!
+
+
+Similarily: 
+
+a = mx + r1
+b = my + r2
+
+(a x b) % m = ((mx + r1) * (my + r2)) %m
+
+-------------------------------------
+#Important: 
+(a + b) % m = (a%m + b%m) %m
+(a - b) % m = ((a%m - b%m) + m) %m      [see this]
+(a * b) % m = (a%m * b%m) %m
+
+------------------------------------
+
+-> calculating power using recursion
+power(int a, int n) {
+    if(n == 0) return 1;
+    int res = power(a, n/2);
+    res = res * res;
+    if(n % 2 == 1) res = res * a;
+    return res;
+}
+
+
+-> Binary exponentiation (saves from int overflow say when need to computer 3^1000 with mod)
+power(int a, int b, int mod) {
+    if(n == 0) return 1;
+    int res = power(a, n/2, mod);
+    res = (res %m * res %m ) %m;
+    if(n %2 == 1) res = ((res%m) * (a%m)) %m;
+}
+
+-> Binary search using Recursion
+[1, 3, 5, 7, 9, 11, 13]
+ 0                   6
+
+x = 9
+mid = 3: a[mid] = 7 < 9
+
+bool binarySearch(int l, int r, int x, int a[]) {
+    if(l > r) return false;
+    int mid = (l + r) / 2;
+    if(a[mid] == x) 
+        return true;
+    else if(a[mid] < x)
+        return binarySearch(mid +1, r, x, a); 
+    return binarySearch(l, mid -1, x, a);
+}
