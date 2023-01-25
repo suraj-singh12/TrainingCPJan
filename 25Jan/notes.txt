@@ -1,0 +1,12 @@
+TA:
+https://leetcode.com/problems/sum-of-subarray-minimums/
+
+N Queen problem
+
+Start making notes of algos for questions that you solve!
+
+Operating Systems 
+Computer Networks
+DBMS
+
+Solve Sudoku

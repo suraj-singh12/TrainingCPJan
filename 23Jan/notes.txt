@@ -1,0 +1,8 @@
+TA:
+https://www.geeksforgeeks.org/merge-sort-with-o1-extra-space-merge-and-on-lg-n-time/
+
+Friends pairing problem
+no of ways to fill an area using 4 x n tiles
+
+if(n < 4) return 1;
+return f(n - 1) + f(n - 4);
